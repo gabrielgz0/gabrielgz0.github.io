@@ -1,21 +1,18 @@
-# Next.js template
+# gabrielgz-web
 
-This is a Next.js template with shadcn/ui.
+Site pessoal. Next.js + Tailwind + shadcn/ui.
 
-## Adding components
-
-To add components to your app, run the following command:
+## rodar local
 
 ```bash
-npx shadcn@latest add button
+npm install
+npm run dev
 ```
 
-This will place the ui components in the `components` directory.
+## stack
 
-## Using components
+Next.js 16 · Tailwind CSS · shadcn/ui · Geist Mono
 
-To use the components in your app, import them as follows:
+## por que existe
 
-```tsx
-import { Button } from "@/components/ui/button";
-```
+LinkedIn existe. Este site é pra quem já pulou esse passo.

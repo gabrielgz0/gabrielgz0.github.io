@@ -1,19 +1,26 @@
-import { Button } from "@/components/ui/button"
+"use client"
+
+import { useState } from "react"
+import { Nav, type TabId } from "@/components/Nav"
+import { Home } from "@/components/sections/Home"
+import { Sobre } from "@/components/sections/Sobre"
+import { Stack } from "@/components/sections/Stack"
+import { Projetos } from "@/components/sections/Projetos"
+import { Contato } from "@/components/sections/Contato"
 
 export default function Page() {
+  const [activeTab, setActiveTab] = useState<TabId>("home")
+
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
+    <div className="min-h-svh bg-background">
+      <Nav activeTab={activeTab} onTabChange={setActiveTab} />
+      <main className="mx-auto max-w-[880px]">
+        {activeTab === "home" && <Home onTabChange={setActiveTab} />}
+        {activeTab === "sobre" && <Sobre />}
+        {activeTab === "stack" && <Stack />}
+        {activeTab === "projetos" && <Projetos />}
+        {activeTab === "contato" && <Contato />}
+      </main>
     </div>
   )
 }
